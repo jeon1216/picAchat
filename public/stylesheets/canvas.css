@@ -1,0 +1,45 @@
+@charset "utf-8";
+
+#icon li a img{
+  float: left;
+  border: 1px solid #A0A0A0;
+  border-radius: 3px 3px 3px 3px;  
+  display: inline-block;
+  margin: 1px;
+}
+
+#icon li a img:hover {
+  border: 1px solid #C4CFFF;
+}
+
+
+#mainArea {
+  height: 632px;
+  text-align: center;
+  padding-top: 20px;  
+}
+
+#canvas {
+  cursor: url(/img/cursor0.gif) 16 16, auto;
+  background-color: #fff;  
+  background-image: url("/images/eraser.jpg");
+}
+
+#attendants li {
+  float: left;
+  margin-left: 10px;
+}
+#chatWindow {
+  height:300px; 
+  overflow:auto; 
+  border:1px solid #000;
+  text-align: left;
+}
+#chatWindow p{
+  margin: 2px;
+  line-height: 15px;
+}
+
+#btnArea{
+  text-align: left;
+}

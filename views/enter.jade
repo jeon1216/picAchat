@@ -1,0 +1,21 @@
+- if (isSuccess)
+  h2 チャット　リスト
+  p #{nickname}様 ようこそ!!　^o^
+  p 希望なチャットがなかったら新しくチャトを作りましょう~~
+    form(action='/makeRoom', method='POST')
+      label(for='roomname') チャット名
+      input(type='text', id='roomname', name='roomname')
+      input.btn(type='submit', value='チャトを作る')
+  ul
+    each room in roomList
+      li= room
+        input.btn.btn-primary(type='button', value='入場', onclick='location.href=\'/join/' + room + '\'');  
+- else
+  - if (nickname === '')
+    script(type='text/javascript')
+      alert('miss nickname.');
+      history.go(-1);
+  - else
+    script(type='text/javascript')
+      alert('dup nickname.');
+      history.go(-1);

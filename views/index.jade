@@ -1,0 +1,15 @@
+h2 chat room
+form(action='/enter', method='POST')
+  label(for='nickname') 表示名を入力してください。
+  input(type='text', id='nickname', name='nickname')
+  input.btn(type='submit', value='入る～＾＾')
+  
+script(type='text/javascript')
+  $(document).ready(function() {
+    $('form').submit(function(e) {
+      if ($.trim($('#nickname').val()) === '') {
+        alert('表示名を入力してください');
+        return false;
+      }
+    });
+  });

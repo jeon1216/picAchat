@@ -1,0 +1,61 @@
+- if(!isSuccess)
+  script
+    alert('入ることができません。');
+    location.href = '/enter';
+- else
+  link(rel='stylesheet', href='/resource/farbtastic.css')
+  link(rel='stylesheet', href='/stylesheets/canvas.css')
+  link(rel='stylesheet', href='/stylesheets/ui-lightness/jquery-ui-1.8.21.custom.css')  
+  script(type='text/javascript', src='/resource/farbtastic.js')
+  script(type='text/javascript', src='/javascripts/canvas.js')
+  script(type='text/javascript', src='/javascripts/jquery-ui-1.8.21.custom.min.js')
+  img#image1(width='100',height='100')
+  h3 チャット名 :
+    span#roomName= roomName
+    button#leave.btn.btn-danger
+      i.icon-remove
+      退場
+      
+  .container-fluid
+    .row-fluid
+      .span9#mainArea
+        .span11#btnArea
+          button#save.btn.btn-primary
+            i.icon-ok 
+            保存
+          button#clear.btn.btn-danger
+            i.icon-trash
+            クリア
+          button#back.btn
+            i.icon-arrow-left
+
+          button#back.btn
+            i.icon-arrow-right
+
+        canvas#canvas(width='700', height='570')
+      .span3
+        .span11
+          ul(id='icon')
+            li
+              a(href='#')
+                img#line(width='16', height='16', src='/images/line.jpg')
+            li
+              a(href='#')
+                img#line(width='16', height='16', src='/images/eraser.jpg')
+        .span11#colorpicker
+        .span11#slider
+        .span11#addUser
+          p 参加者
+          ul#attendants
+            each attendant in attendants
+              li(id='attendant-'+attendant)
+                i.icon-user
+                = attendant
+                  
+        .span11#chatRoom
+          .span11#chatWindow        
+          form
+            .span11
+              span#myName #{nickName}
+              input(type='text', style='width:100px;')#message
+              input(type='submit', value='送信')

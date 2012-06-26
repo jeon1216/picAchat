@@ -1,0 +1,12 @@
+- if (isSuccess)
+  script
+    alert('チャットを作りました。');
+    location.href = '/join/#{roomName}';
+- else if (roomname == '')
+  script
+    alert('チャット作成失敗');
+    location.href = '/enter';
+- else
+  script
+    alert('既に存在します。');
+    location.href = '/enter';
